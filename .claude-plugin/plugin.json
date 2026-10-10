@@ -1,0 +1,14 @@
+{
+  "name": "music24",
+  "displayName": "Music24",
+  "version": "1.0.0",
+  "description": "Run your music release from Claude: release kits, rollout plans, social posts, SmartLinks, pre-saves, your streaming and social numbers, and public chart data. Connects to your Music24 account with OAuth.",
+  "author": {
+    "name": "Music24",
+    "email": "support@music24.com",
+    "url": "https://music24.com"
+  },
+  "homepage": "https://music24.com/api-docs",
+  "license": "MIT",
+  "keywords": ["music", "release", "marketing", "smartlinks", "pre-save", "social", "charts"]
+}
