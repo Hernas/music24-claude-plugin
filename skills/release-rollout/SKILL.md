@@ -39,12 +39,13 @@ Turn one song into a rollout plan and scheduled posts on the artist's channels.
    - Leave out a step: action 'skip' (answers a preview first: its drafts go and its scheduled
      posts are canceled). Bring it back with 'unskip'.
    - Another file for a step: action 'media'.
+   - An AI reel for a step: action 'stepReel' with the `dayKey`. It makes one AI reel of the song
+     for 1 credit, so it answers a preview first. Offer it for the reel days of the plan.
 7. **Make the drafts.** Call `music24_add_rollout_drafts`. Drafts use no scheduled-post unit and
    nothing goes out. With `makeMissing: true` it also makes missing kit assets. That spends credits,
-   so it answers a preview first. In this connector it makes only kit assets that are not AI
-   footage: an AI reel day stays without a file, and a call that would make an asset with AI
-   footage is refused (`M24_MCP_NOT_IN_HOST`). Then make that asset with `music24_make_assets` and
-   a style that is not AI footage (the `release-kit` skill), and add the drafts again.
+   so it answers a preview first. It does not make the AI reel of a reel day: make that one with
+   action 'stepReel' (step 6) or with `music24_make_reel` (the `release-kit` skill), then add the
+   drafts again.
 8. **Write captions if asked.** `music24_write_captions` writes one caption per platform. Nothing
    is posted. Change a draft with `music24_update_post` (caption only: no preview).
 9. **Review the calendar.** Call `music24_get_calendar` for the release weeks and show the drafts
@@ -58,9 +59,8 @@ Turn one song into a rollout plan and scheduled posts on the artist's channels.
 
 ## Do not
 
-- Do not ask for or use AI reels, AI cover pictures or AI clips. This Claude connector does not
-  make AI images, video or audio. Do not use the 'stepReel' action of
-  `music24_update_release_plan`: it answers `M24_MCP_NOT_IN_HOST`. Offer kit assets instead.
+- Do not make an AI reel ('stepReel', `music24_make_reel`) or any other asset that costs credits
+  without a yes on the preview.
 - Do not schedule, post or delete without a yes on the preview.
 - Do not cancel scheduled posts (`music24_cancel_post`) unless the user asks for it.
 - Do not promise a plan change or a purchase. When a tool says the plan does not include

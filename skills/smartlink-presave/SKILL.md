@@ -55,7 +55,8 @@ after a yes, and report how it does.
   preview.
 - Do not add a tracking pixel (`music24_manage_trackers`) unless the user pastes the pixel code.
   `music24_list_trackers` shows the pixels that are already on the pages.
-- Do not make AI cover pictures for the page. This Claude connector does not make AI images, video
-  or audio. Use the song artwork or a kit image (`release-kit` skill).
+- Do not make AI cover pictures for the page on your own. When the song has no artwork, offer
+  `music24_make_cover_pictures` (the `release-kit` skill): it uses the monthly AI picture quota and
+  answers a preview first. Else use the song artwork or a kit image.
 - Do not promise a plan change. When a tool says the plan does not include something, tell the
   user and point them to the Music24 app.

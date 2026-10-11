@@ -45,4 +45,5 @@ Read Music24's public chart data and keep the Watchlist of the workspace up to d
 - Do not follow or unfollow without the user's yes: every member of the workspace sees the change.
 - Do not spend many browse credits on details the user did not ask for.
 - Do not present chart positions as streams. Music24 charts measure playlist visibility and adds.
-- Do not make AI images, video or audio of the charts. This Claude connector does not make them.
+- Do not make reels or other assets of another artist's song. Music24 makes them only for the songs
+  of the user's own catalog (the `release-kit` skill).

@@ -24,8 +24,8 @@ reads. It changes nothing.
 1. **Pick the artist.** Call `music24_list_artists` and keep the `accountId`. Ask when there is
    more than one artist that is not a demo.
 2. **Start from Home.** Call `music24_get_artist_home`. It has the catalog, the connected services,
-   the streaming overview, the SmartLinks and their visits, the social channels and the scheduled
-   posts.
+   the streaming overview, the SmartLinks and their visits, the social channels, the scheduled
+   posts and the AI reels.
 3. **Streams.** Call `music24_get_streaming_overview` (totals and trend) and
    `music24_list_streaming_tracks` (the songs by streams). For a country or store view, call
    `music24_get_streaming_breakdown`. For one song day by day, call `music24_get_track_streams`
@@ -43,13 +43,14 @@ reads. It changes nothing.
 8. **Report.** Write at most five short blocks: streams, social, SmartLinks, charts, next steps.
    Give each number with its change against last week where the tool gives one. End with two or
    three next steps the user can say yes to (for example "schedule the drafts of Friday" with the
-   `release-rollout` skill).
+   `release-rollout` skill, or "make an AI reel of the song that moved most" with the `release-kit`
+   skill; an AI reel costs 1 credit and answers a preview first).
 
 ## Do not
 
 - Do not change anything in this workflow unless the user asks.
-- Do not offer AI reels or AI cover pictures as a next step. This Claude connector does not make AI
-  images, video or audio.
+- Do not make an AI reel or an AI cover picture in this workflow. Offer it as a next step; the
+  `release-kit` skill makes it after a yes on the preview.
 - Do not compare with other artists by name unless the user asks for chart data.
 - Do not show fan emails. Pre-save fan lists stay in the `smartlink-presave` skill, for the
   workspace owner only.

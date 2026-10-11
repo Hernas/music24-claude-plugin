@@ -2,7 +2,7 @@
   "mcpServers": {
     "music24": {
       "type": "http",
-      "url": "https://api.music24.com/mcp/claude"
+      "url": "https://api.music24.com/mcp"
     }
   }
 }
