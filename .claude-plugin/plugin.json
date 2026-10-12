@@ -10,5 +10,15 @@
   },
   "homepage": "https://music24.com/api-docs",
   "license": "MIT",
-  "keywords": ["music", "release", "marketing", "smartlinks", "pre-save", "social", "charts"]
+  "keywords": [
+    "music",
+    "release",
+    "marketing",
+    "smartlinks",
+    "pre-save",
+    "social",
+    "charts"
+  ],
+  "icon": ".claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://music24.com/privacy-policy"
 }
